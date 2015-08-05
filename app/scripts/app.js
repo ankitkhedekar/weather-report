@@ -9,4 +9,8 @@
  * Main module of the application.
  */
 angular
-  .module('weatherReportApp', []);
+  .module('weatherReportApp', ['LocalStorageModule'])
+  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
+	  localStorageServiceProvider.setPrefix('wr');
+	}]);
+

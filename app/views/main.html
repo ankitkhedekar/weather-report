@@ -1,23 +1,15 @@
 <div id="now" class="text-center">
-  <span>{{ now }}</span>°C
+  <span>{{ now.temp }}</span>°C
 </div>
 
 <div id="location" class="text-center">Mumbai, Maharashtra</div>
 
 <ul id="history" class="cf">
-  <li class="">
-    <span>Thursday</span>
-    <div class="temp">25°c</div>
-    <div ng-show="false" class="description">heavy intensity rain</div>
+  <li ng-show='temps.length == 0' class="text-center">
+    <span>No history found</span>
   </li>
-  <li class="">
-    <span>Thursday</span>
-    <div class="temp">25°c</div>
-    <div ng-show="false" class="description">heavy intensity rain</div>
-  </li>
-  <li class="">
-    <span>Thursday</span>
-    <div class="temp">25°c</div>
-    <div ng-show="false" class="description">heavy intensity rain</div>
+  <li ng-repeat='t in temps track by $index ' class="">
+    <span>{{ t.timestamp }}</span>
+    <div class="temp">{{ t.temp }}°c</div>
   </li>
 </ul>
