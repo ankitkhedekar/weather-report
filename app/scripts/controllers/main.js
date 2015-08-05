@@ -8,10 +8,6 @@
  * Controller of the weatherReportApp
  */
 angular.module('weatherReportApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope) {
+    $scope.now = Math.floor((Math.random() * 11) + 20);
   });
